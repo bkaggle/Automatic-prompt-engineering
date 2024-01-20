@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Question Answering App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Question Answering App</h1>
+
+        <!-- Input field for asking a new question -->
+        <form action="{{ url_for('ask') }}" method="post">
+            <label for="question">Ask a Question:</label>
+            <input type="text" id="question" name="question" required>
+            <button type="submit">Ask</button>
+        </form>
+
+        <!-- Display section for answers -->
+        <div id="answers-container">
+            <h2>Answers</h2>
+            {% for answer in answers %}
+                <div class="result">
+                    <h3>Question: {{ answer['question'] }}</h3>
+                    <p><strong>Knowledge:</strong> {{ answer['knowledge'] }}</p>
+                    <p><strong>Answer:</strong> {{ answer['answer'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Display section for evaluation results -->
+        <div id="evaluation-container">
+            <h2>Evaluation Results</h2>
+            {% for metric, values in metrics.items() %}
+                <p><strong>{{ metric }}:</strong> {% if values %}{{ values|sum / values|length * 100 }}%{% endif %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
