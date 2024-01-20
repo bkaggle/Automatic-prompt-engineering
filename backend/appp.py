@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
-from evaluator import Evaluator
-from knowledge_retrieval import KnowledgeRetrieval
-from knowledge_integrator import KnowledgeIntegrator
-import config
+from evaluation.evaluator import Evaluator
+from prompt_generation.knowledge_retrieval import KnowledgeRetrieval
+from prompt_generation.knowledge_integrator import KnowledgeIntegrator
+import prompt_generation.config
 import pickle
+from prompt_generation import config
 import config_secret
 
 app = Flask(__name__)
