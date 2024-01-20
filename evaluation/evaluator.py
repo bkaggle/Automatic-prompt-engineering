@@ -4,7 +4,7 @@ from langchain import LLMChain, PromptTemplate
 from langchain.callbacks import get_openai_callback
 from langchain.chat_models import ChatOpenAI
 
-import config
+from prompt_generation import config
 
 
 class Evaluator:
