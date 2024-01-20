@@ -1,5 +1,5 @@
-langchain==0.0.218
-openai==0.27.8
+langchain
+openai
 rouge==1.0.1
 bleu==0.3
 faiss-cpu==1.7.4

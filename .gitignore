@@ -1,2 +1,2 @@
 # .gitignore
-.prompt_generation/config_secret.py
+secret.py
