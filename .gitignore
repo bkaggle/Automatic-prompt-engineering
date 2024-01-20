@@ -1,2 +1,3 @@
 # .gitignore
 config_secret.py
+OPENAI_API_KEY
